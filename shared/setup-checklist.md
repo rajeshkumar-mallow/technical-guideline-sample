@@ -21,7 +21,7 @@
    ```bash
    cp .env.example .env.local
    ```
-5. **Install editor tooling.** ESLint, Prettier (or Biome), and the TypeScript extension must be active in-editor, pointed at the project's config — not global defaults. See [Code Style & Linting](code-style-linting.md).
+5. **Install editor tooling.** ESLint, Prettier (or Biome), and the TypeScript extension must be active in-editor, pointed at the project's config — not global defaults. See [Code Style & Linting](../js/code-style-linting.md).
 6. **Install git hooks.** `pnpm prepare` (Husky/`simple-git-hooks`) wires up pre-commit lint/format and commit-msg validation. Do not bypass with `--no-verify` (see [Git & PR Workflow](git-pr-workflow.md)).
 7. **Start the dev server** using the project script, not a raw framework command someone remembers:
    ```bash

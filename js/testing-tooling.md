@@ -2,7 +2,7 @@
 
 **Read this first.** This file names the specific tools for each layer of the test pyramid. For *why* we test at each layer and what coverage is expected, see [Testing Philosophy](../shared/testing-philosophy.md) first — this file is the "which tool, how configured" companion to that principle.
 
-**Applies to:** All frontend projects (any framework). React/Next-specific test setup (mocking the router, RSC considerations) lives in [react-next/testing.md](../react-next/testing.md).
+**Applies to:** All frontend projects (any framework). React component test setup lives in [react/testing.md](../frontend/react/testing.md); Next.js-specific test setup (mocking the router, RSC considerations) lives in [next/testing.md](../frontend/next/testing.md).
 
 ---
 
@@ -62,7 +62,7 @@ test('user can complete checkout', async ({ page }) => {
 ```
 
 ### Accessibility tests
-- `axe-core` runs as part of component or e2e tests on key flows (see [Accessibility](accessibility.md)) — wired through `@axe-core/playwright` or `jest-axe`, not a separate manual-only process.
+- `axe-core` runs as part of component or e2e tests on key flows (see [Accessibility](../frontend/accessibility.md)) — wired through `@axe-core/playwright` or `jest-axe`, not a separate manual-only process.
 
 ---
 

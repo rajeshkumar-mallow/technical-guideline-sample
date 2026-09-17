@@ -2,7 +2,7 @@
 
 **Read this first.** This governs how types are written across every frontend, React, and Next.js repo. TypeScript is only as useful as its strictness and consistency — a codebase full of `any` provides false confidence.
 
-**Applies to:** all `.ts`/`.tsx` source. React-specific typing (props, generics on components, hooks) is covered here; component structure itself is in [react-next/components-architecture.md](../react-next/components-architecture.md).
+**Applies to:** all `.ts`/`.tsx` source. React-specific typing (props, generics on components, hooks) is covered here; component structure itself is in [react/components-architecture.md](../frontend/react/components-architecture.md).
 
 ---
 

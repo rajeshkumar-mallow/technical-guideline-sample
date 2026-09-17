@@ -1,6 +1,6 @@
 # Analytics & Tracking (React/Next)
 
-**Read this first.** The App Router has no built-in page-change event (the Pages Router's `routeChangeComplete` doesn't exist here), and third-party analytics scripts loaded carelessly block rendering. This file governs script loading and route-change tracking specifically for App Router projects — general event-naming and consent rules live in [frontend/analytics-tracking.md](../frontend/analytics-tracking.md).
+**Read this first.** The App Router has no built-in page-change event (the Pages Router's `routeChangeComplete` doesn't exist here), and third-party analytics scripts loaded carelessly block rendering. This file governs script loading and route-change tracking specifically for App Router projects — general event-naming and consent rules live in [frontend/analytics-tracking.md](../analytics-tracking.md).
 
 **Applies to:** Any analytics/tracking script (product analytics, ads pixels, A/B testing SDKs) loaded into a React/Next 15 App Router app.
 
@@ -70,7 +70,7 @@ import { AnalyticsPageView } from "@/components/analytics-page-view";
 ```
 
 ### Consent gating still applies
-Loading a script via `next/script` doesn't bypass consent requirements — gate the `<Script>` render itself behind the consent state from [shared/privacy-compliance.md](../shared/privacy-compliance.md); don't fire it unconditionally and try to opt out after the fact.
+Loading a script via `next/script` doesn't bypass consent requirements — gate the `<Script>` render itself behind the consent state from [shared/privacy-compliance.md](../../shared/privacy-compliance.md); don't fire it unconditionally and try to opt out after the fact.
 
 ```tsx
 {hasAnalyticsConsent && (

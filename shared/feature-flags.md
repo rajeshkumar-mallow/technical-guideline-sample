@@ -38,7 +38,7 @@ function CheckoutForm() {
 Avoid `if (flag) { ... } else { ... }` branching duplicated across many files — centralize the branch at the boundary (route, top-level component) so removal is a small diff.
 
 ### Server-evaluated flags never leak future-feature names to the client
-For unreleased/competitive-sensitive features, evaluate server-side (RSC, API response) rather than shipping the flag key + all variant code to the client bundle, which anyone can inspect. See [`../react-next/security.md`](../react-next/security.md).
+For unreleased/competitive-sensitive features, evaluate server-side (RSC, API response) rather than shipping the flag key + all variant code to the client bundle, which anyone can inspect. See [`next/security.md`](../frontend/next/security.md).
 
 ### Kill-switches are tested
 An ops kill-switch that's never been flipped in staging is unverified. Exercise the "off" path in CI at least once per quarter for critical switches.

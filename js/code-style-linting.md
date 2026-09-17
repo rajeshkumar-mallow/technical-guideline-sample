@@ -2,7 +2,9 @@
 
 **Read this first.** This governs naming, formatting, and the lint/format toolchain shared by every frontend, React, and Next.js repo. Consistent style removes a whole category of PR review noise and diff churn.
 
-**Applies to:** all JavaScript/TypeScript source in every repo that adopts this guideline. Component-specific conventions live in [react-next/components-architecture.md](../react-next/components-architecture.md); type-level rules live in [TypeScript Conventions](typescript-conventions.md).
+**Applies to:** all JavaScript/TypeScript source in every repo that adopts this guideline. Component-specific conventions live in [react/components-architecture.md](../frontend/react/components-architecture.md); type-level rules live in [TypeScript Conventions](typescript-conventions.md).
+
+**Scope boundaries:** this file is the **shared floor** — toolchain, naming, formatting, import order — not a detailed playbook for any one area. Don't extend it with framework- or domain-specific rules; add those to the file that already owns that domain (component patterns → [react/components-architecture.md](../frontend/react/components-architecture.md); CSS conventions → [Styling Foundations](../frontend/styling-foundations.md); types → [TypeScript Conventions](typescript-conventions.md)) and link back here instead of duplicating.
 
 ---
 
@@ -69,7 +71,7 @@ Enforced via `eslint-plugin-import` or `simple-import-sort`:
 
 - **`eslint-plugin-unicorn`** for additional correctness/consistency rules beyond the base set.
 - **Stylelint** for CSS/SCSS files if the project uses stylesheets rather than a utility-first/CSS-in-JS approach — see [Styling Foundations](../frontend/styling-foundations.md).
-- **Commitlint** integration to enforce [Git & PR Workflow](git-pr-workflow.md) commit conventions at commit time, not just in review.
+- **Commitlint** integration to enforce [Git & PR Workflow](../shared/git-pr-workflow.md) commit conventions at commit time, not just in review.
 - Editor-level ESLint/Prettier extensions with workspace settings checked in (`.vscode/settings.json`) so defaults are consistent without per-developer setup.
 
 ## Anti-Patterns (do not ship)

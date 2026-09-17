@@ -2,7 +2,7 @@
 
 **Read this first.** Two decisions drive most long-term maintainability outcomes: how files are organized within an app, and when (if ever) to split beyond a single app. Both are covered here as defaults with explicit escalation triggers — not a menu of equally-valid options to pick from on day one.
 
-**Applies to:** every project. React/Next-specific component-level architecture is in [react-next/components-architecture.md](../react-next/components-architecture.md).
+**Applies to:** every project. React-specific component-level architecture is in [react/components-architecture.md](../frontend/react/components-architecture.md).
 
 ---
 

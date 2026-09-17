@@ -1,8 +1,8 @@
 # Hooks
 
-**Read this first.** Custom hooks are how shared stateful logic stays testable and composable instead of duplicated across components. This file covers naming, enforcement, and when extraction is actually worth it.
+**Read this first.** Custom hooks are how shared stateful logic stays testable and composable instead of duplicated across components. This file covers naming, enforcement, and when extraction is actually worth it. Fully framework-agnostic.
 
-**Applies to:** Next.js App Router projects, Client Components (hooks with state/effects only run in Client Components).
+**Applies to:** any React codebase.
 
 ---
 
@@ -54,7 +54,7 @@ const [isOpen, setIsOpen] = useState(false);
 
 ## Recommended (opt-in)
 
-- Co-locate a hook with its sole consumer (`app/dashboard/_hooks/use-dashboard-filters.ts`) when it's route-specific; promote to a shared `hooks/` folder only once a second consumer appears.
+- Co-locate a hook with its sole consumer (a `hooks/` folder scoped to that feature) when it's feature-specific; promote to a shared top-level `hooks/` folder only once a second consumer appears.
 - Unit test custom hooks with `@testing-library/react`'s `renderHook` for any hook with nontrivial branching logic — see [`testing.md`](testing.md).
 
 ---

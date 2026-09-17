@@ -2,7 +2,7 @@
 
 **Read this first.** Performance is a user-facing correctness concern, not a post-launch optimization pass. Budgets and targets below are checked before merge, not discovered in production.
 
-**Applies to:** All frontend surfaces (any framework). React/Next-specific mechanisms (Image/Font components, RSC streaming) live in [react-next/performance.md](../react-next/performance.md), which extends this file.
+**Applies to:** All frontend surfaces (any framework). Next.js-specific mechanisms (Image/Font components, RSC streaming) live in [next/performance.md](next/performance.md), which extends this file.
 
 ---
 

@@ -1,6 +1,6 @@
 # Security (React/Next)
 
-**Read this first.** Server Components and Server Actions blur the client/server line in ways that create Next-specific footguns — an object that "just works" as a prop can silently leak fields to the browser, and a Server Action looks like a plain function call but is a public HTTP endpoint. This file covers what's specific to React/Next; general web security (XSS, CSP headers, dependency scanning) lives in [frontend/security.md](../frontend/security.md).
+**Read this first.** Server Components and Server Actions blur the client/server line in ways that create Next-specific footguns — an object that "just works" as a prop can silently leak fields to the browser, and a Server Action looks like a plain function call but is a public HTTP endpoint. This file covers what's specific to React/Next; general web security (XSS, CSP headers, dependency scanning) lives in [frontend/security.md](../security.md).
 
 **Applies to:** all React/Next projects.
 
@@ -79,7 +79,7 @@ Never use `'unsafe-inline'` as a substitute for wiring the nonce through — it 
 ## Recommended (opt-in)
 
 - Add a lint rule or code-review checklist item flagging any Server Component prop spread (`{...record}`) passed into a component imported from a file with `"use client"`.
-- Rate-limit sensitive Server Actions (auth, payment-adjacent, expensive mutations) the same way you would a REST endpoint — see [API Resilience](../frontend/api-resilience.md) for the underlying pattern.
+- Rate-limit sensitive Server Actions (auth, payment-adjacent, expensive mutations) the same way you would a REST endpoint — see [API Resilience](../api-resilience.md) for the underlying pattern.
 
 ---
 
@@ -104,7 +104,7 @@ Never use `'unsafe-inline'` as a substitute for wiring the nonce through — it 
 ✗ No secrets behind NEXT_PUBLIC_, no 'unsafe-inline' CSP shortcuts
 ```
 
-See also: [frontend/security.md](../frontend/security.md), [Forms & Validation](forms-validation.md), [API Integration](api-integration.md), [Auth](auth.md).
+See also: [frontend/security.md](../security.md), [Forms & Validation](forms-validation.md), [API Integration](api-integration.md), [Auth](auth.md).
 
 ---
 *Section version: 0.1 — initial draft*

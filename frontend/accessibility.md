@@ -64,7 +64,7 @@ test('checkout page has no AA violations', async ({ page }) => {
 });
 ```
 
-See [Testing Tooling](testing-tooling.md) for where this fits in the overall test suite.
+See [Testing Tooling](../js/testing-tooling.md) for where this fits in the overall test suite.
 
 ---
 

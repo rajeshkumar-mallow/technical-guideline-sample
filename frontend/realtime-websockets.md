@@ -2,7 +2,7 @@
 
 **Read this first.** A WebSocket/SSE connection is long-lived state the browser has to babysit through network drops, tab backgrounding, and server restarts. Most realtime bugs are reconnection bugs, not protocol bugs — design for disconnection from the start.
 
-**Applies to:** any frontend consuming WebSocket or Server-Sent Events (SSE) streams. React/Next projects wrap these patterns in a hook or provider — see [`../react-next/hooks.md`](../react-next/hooks.md).
+**Applies to:** any frontend consuming WebSocket or Server-Sent Events (SSE) streams. React projects wrap these patterns in a hook or provider — see [`react/hooks.md`](react/hooks.md).
 
 ---
 

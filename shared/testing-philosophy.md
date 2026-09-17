@@ -1,6 +1,6 @@
 # Testing Philosophy
 
-**Read this first.** This defines *what* to test, *how much*, and *why* — the shared principles behind every test suite. Tool-specific setup (which runner, which e2e framework, how to configure it) lives in [frontend/testing-tooling.md](../frontend/testing-tooling.md) and [react-next/testing.md](../react-next/testing.md) — this file does not duplicate that.
+**Read this first.** This defines *what* to test, *how much*, and *why* — the shared principles behind every test suite. Tool-specific setup (which runner, which e2e framework, how to configure it) lives in [js/testing-tooling.md](../js/testing-tooling.md), [react/testing.md](../frontend/react/testing.md), and [next/testing.md](../frontend/next/testing.md) — this file does not duplicate that.
 
 **Applies to:** every repo adopting this guideline, regardless of framework.
 
@@ -29,7 +29,7 @@ A PR that changes behavior is not done until:
 3. Edge cases relevant to the change are covered: empty state, error state, loading state, boundary values.
 
 ### Test what the user observes, not implementation
-- Query by role/label/text (what a user or screen reader sees), not by internal state, class names, or implementation details. This is enforced at the tool level in [react-next/testing.md](../react-next/testing.md) (Testing Library's guiding principle).
+- Query by role/label/text (what a user or screen reader sees), not by internal state, class names, or implementation details. This is enforced at the tool level in [react/testing.md](../frontend/react/testing.md) (Testing Library's guiding principle).
 - A refactor that doesn't change behavior should not break tests. If it does, the test was coupled to implementation, not behavior.
 
 ### Coverage

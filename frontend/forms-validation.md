@@ -1,6 +1,6 @@
 # Forms & Validation (Frontend)
 
-**Read this first.** Forms are where most accessibility and data-integrity bugs live — silent validation failures, errors announced to nobody, and client/server rule drift. This file sets the framework-agnostic baseline; React/Next-specific form patterns (React Hook Form, Server Actions) are in [`react-next/forms-validation.md`](../react-next/forms-validation.md).
+**Read this first.** Forms are where most accessibility and data-integrity bugs live — silent validation failures, errors announced to nobody, and client/server rule drift. This file sets the framework-agnostic baseline; React-specific form patterns (React Hook Form) are in [`react/forms-validation.md`](react/forms-validation.md); Next.js-specific submission (Server Actions) is in [`next/forms-validation.md`](next/forms-validation.md).
 
 **Applies to:** any HTML form, in any stack.
 

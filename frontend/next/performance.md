@@ -1,6 +1,6 @@
 # Performance (React/Next)
 
-**Read this first.** Next.js gives you route-based code splitting and image/font optimization for free — most performance regressions come from opting out of those defaults, not from the framework failing to provide them. This file covers the Next-specific layer on top of the general [frontend performance](../frontend/performance.md) rules.
+**Read this first.** Next.js gives you route-based code splitting and image/font optimization for free — most performance regressions come from opting out of those defaults, not from the framework failing to provide them. This file covers the Next-specific layer on top of the general [frontend performance](../performance.md) rules.
 
 **Applies to:** all React/Next projects.
 
@@ -24,7 +24,7 @@ import Image from "next/image";
 ```
 
 - Set `priority` on the single largest above-the-fold image (usually the LCP element) — do not set it on every image, which defeats lazy loading.
-- Always supply `alt`; ties to [Accessibility](../frontend/accessibility.md).
+- Always supply `alt`; ties to [Accessibility](../accessibility.md).
 - Remote images require an allowlisted domain in `next.config.js` `images.remotePatterns` — do not disable image optimization (`unoptimized: true`) without an ADR.
 
 ### Fonts — `next/font`
@@ -93,7 +93,7 @@ Run `@next/bundle-analyzer` before merging any change that adds a new dependency
 ✗ No priority spam, no undocumented ssr: false
 ```
 
-See also: [Rendering Strategies](rendering-strategies.md), [Routing & Data Fetching](routing-data-fetching.md), [frontend/performance.md](../frontend/performance.md).
+See also: [Rendering Strategies](rendering-strategies.md), [Routing & Data Fetching](routing-data-fetching.md), [frontend/performance.md](../performance.md).
 
 ---
 *Section version: 0.1 — initial draft*

@@ -2,7 +2,7 @@
 
 **Read this first.** "Support all browsers" is not a spec — it's a way to ship untested code. This file defines the default supported matrix, how degradation is handled outside it, and how a project records a different matrix when the product genuinely needs one.
 
-**Applies to:** every project. Mobile-specific ergonomics live in [Responsive Design](../frontend/responsive-design.md).
+**Applies to:** every project. Mobile-specific ergonomics live in [Responsive Design](responsive-design.md).
 
 ---
 

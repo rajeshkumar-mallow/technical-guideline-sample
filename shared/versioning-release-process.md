@@ -27,8 +27,8 @@
 - A public API is never removed in the same release it's deprecated. Mark deprecated (JSDoc `@deprecated` + runtime warning where feasible in dev), give consumers at least one minor version cycle, then remove in the next major.
 
 ### Version currency review (framework/library baseline)
-Separate from package releases: the **assumed framework baseline** (Next.js/React versions stated in [react-next/README.md](../react-next/README.md)) must not silently go stale.
-- On every Next.js/React **minor** release, review: any newly-stabilized feature that was previously marked experimental in [react-next/rendering-strategies.md](../react-next/rendering-strategies.md)? Update that file's stable/experimental table.
+Separate from package releases: the **assumed framework baseline** (Next.js/React versions stated in [next/README.md](../frontend/next/README.md)) must not silently go stale.
+- On every Next.js/React **minor** release, review: any newly-stabilized feature that was previously marked experimental in [next/rendering-strategies.md](../frontend/next/rendering-strategies.md)? Update that file's stable/experimental table.
 - On every **major** release (or an approaching EOL of the current major), schedule an upgrade — track it the way the Rails baseline this guideline is modeled on tracks Ruby/Rails/PostgreSQL EOL: a living `docs/UPGRADE_PLAN.md` per project, reviewed on a cadence, not "when forced."
 - Dependency currency more broadly: routine `npm outdated` / `pnpm outdated` review; no unmaintained/abandoned package added without an ADR and an exit plan — ties to [Approved Libraries](approved-libraries.md).
 
@@ -42,7 +42,7 @@ Separate from package releases: the **assumed framework baseline** (Next.js/Reac
 
 - Breaking a public prop/API in a patch or minor release.
 - A shared package with no changelog — consumers forced to diff source to know what changed.
-- Letting the stated framework baseline in `react-next/README.md` drift silently out of date while the actual project has moved on (or vice versa).
+- Letting the stated framework baseline in `next/README.md` drift silently out of date while the actual project has moved on (or vice versa).
 - Treating "experimental" framework features as production-stable without an ADR just because they work in dev.
 - Pinning dependencies indefinitely to avoid the upgrade conversation instead of scheduling it.
 

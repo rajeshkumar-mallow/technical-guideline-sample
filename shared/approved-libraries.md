@@ -2,7 +2,7 @@
 
 **Read this first.** Uncontrolled dependency sprawl is the fastest way to inflate bundle size, create supply-chain risk, and leave the codebase with three different libraries doing the same job. This file is the pre-approved list plus the process for adding anything not on it.
 
-**Applies to:** every project; React/Next-specific packages are cross-referenced from [`react-next/`](../react-next/README.md) rather than duplicated here.
+**Applies to:** every project; React- and Next.js-specific packages are cross-referenced from [`react/`](../frontend/react/README.md) and [`next/`](../frontend/next/README.md) rather than duplicated here.
 
 ---
 
@@ -12,14 +12,14 @@
 
 | Category | Package | Notes |
 |---|---|---|
-| Language | `typescript` | See [TypeScript Conventions](typescript-conventions.md) |
-| Linting/format | `eslint`, `prettier` (or `biome`) | See [Code Style & Linting](code-style-linting.md) |
-| Unit/component testing | `vitest`, `@testing-library/react` | See [Testing Tooling](../frontend/testing-tooling.md) |
-| E2E testing | `@playwright/test` | Preferred over Cypress for new projects — see [Testing Tooling](../frontend/testing-tooling.md) |
+| Language | `typescript` | See [TypeScript Conventions](../js/typescript-conventions.md) |
+| Linting/format | `eslint`, `prettier` (or `biome`) | See [Code Style & Linting](../js/code-style-linting.md) |
+| Unit/component testing | `vitest`, `@testing-library/react` | See [Testing Tooling](../js/testing-tooling.md) |
+| E2E testing | `@playwright/test` | Preferred over Cypress for new projects — see [Testing Tooling](../js/testing-tooling.md) |
 | Dates | `date-fns` (or native `Intl` / `Temporal` where sufficient) | Never `moment` (unmaintained) |
-| Forms | `react-hook-form` + `zod` | See [Forms & Validation](../react-next/forms-validation.md) |
-| Server state / data fetching | `@tanstack/react-query` (or framework-native fetching in Next App Router) | See [State Management](../react-next/state-management.md) |
-| Client global state | `zustand` | Only when Context is insufficient — see [State Management](../react-next/state-management.md) |
+| Forms | `react-hook-form` + `zod` | See [Forms & Validation](../frontend/react/forms-validation.md) |
+| Server state / data fetching | `@tanstack/react-query` (or framework-native fetching in Next App Router) | See [State Management](../frontend/react/state-management.md) |
+| Client global state | `zustand` | Only when Context is insufficient — see [State Management](../frontend/react/state-management.md) |
 | HTTP client | native `fetch` | Wrap with retry/timeout per [API Resilience](../frontend/api-resilience.md); avoid `axios` unless a specific interceptor need justifies it |
 | Utility | `clsx` / `tailwind-merge` | Class-name composition only — no general-purpose utility-belt libraries (no `lodash` for one function) |
 | Icons | project's chosen icon set (record in project addendum) | One icon library per project, not several |

@@ -2,7 +2,7 @@
 
 **Read this first.** A consistent toolchain across projects means a developer moving between them isn't relearning build config every time, and CI stays predictable. This file sets the default bundler and package manager; deviate only with an ADR.
 
-**Applies to:** All frontend projects (any framework). Next.js projects use Next's built-in build pipeline — see [react-next/README.md](../react-next/README.md) — but the package-manager and browser-target rules here still apply.
+**Applies to:** All frontend projects (any framework). Next.js projects use Next's built-in build pipeline — see [next/README.md](next/README.md) — but the package-manager and browser-target rules here still apply.
 
 ---
 
@@ -26,7 +26,7 @@
 - Source maps: enabled in dev always; enabled in production builds but uploaded to the error-tracking provider and **not served publicly** (see [Error Monitoring](error-monitoring.md)).
 
 ### Browser targets
-- The bundler's target/transpile list is driven by the project's stated [Browser & Device Support Matrix](../shared/browser-support-matrix.md) — not a default guess. Set `browserslist` (or Vite's `build.target`) explicitly.
+- The bundler's target/transpile list is driven by the project's stated [Browser & Device Support Matrix](browser-support-matrix.md) — not a default guess. Set `browserslist` (or Vite's `build.target`) explicitly.
 - Ship modern JS to modern browsers by default (`type="module"` + `nomodule` fallback, or a differential-serving setup) rather than transpiling everything down to the lowest common denominator for every user.
 
 ---

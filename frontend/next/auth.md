@@ -2,7 +2,7 @@
 
 **Read this first.** Auth state has to be correctly readable from three different execution contexts — Server Components, Client Components, and Server Actions/Route Handlers — each with a different API for getting at the same session. Getting this wrong produces either a flash-of-unauthenticated-content bug or a real auth bypass.
 
-**Applies to:** all React/Next projects. General token-storage and CSRF principles live in [frontend/auth.md](../frontend/auth.md); this file covers what's Next-specific.
+**Applies to:** all React/Next projects. General token-storage and CSRF principles live in [frontend/auth.md](../auth.md); this file covers what's Next-specific.
 
 ---
 
@@ -81,7 +81,7 @@ When the product has account-security requirements, implement session revocation
 ✗ No Server Action trusting the caller's route to have already checked auth
 ```
 
-See also: [frontend/auth.md](../frontend/auth.md), [Security](security.md), [Middleware-related routing notes](routing-data-fetching.md).
+See also: [frontend/auth.md](../auth.md), [Security](security.md), [Middleware-related routing notes](routing-data-fetching.md).
 
 ---
 *Section version: 0.1 — initial draft*

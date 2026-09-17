@@ -2,7 +2,7 @@
 
 **Read this first.** Every client-side call to a backend or third-party API can fail, hang, or time out. These patterns are mandatory for any outbound `fetch`/HTTP call so failures degrade gracefully instead of hanging the UI or silently losing user input.
 
-**Applies to:** All frontend projects (any framework). React/Next server-side outbound calls (Route Handlers, Server Actions) follow the equivalent server-side patterns in [react-next/api-integration.md](../react-next/api-integration.md); this file governs calls made **from the browser**.
+**Applies to:** All frontend projects (any framework). Next.js server-side outbound calls (Route Handlers, Server Actions) follow the equivalent server-side patterns in [next/api-integration.md](next/api-integration.md); this file governs calls made **from the browser**.
 
 ---
 
@@ -69,7 +69,7 @@ async function retryWithBackoff<T>(fn: () => Promise<T>, maxAttempts = 3): Promi
 ## Recommended (opt-in)
 
 - A small circuit-breaker for a flaky third-party client-side SDK (e.g. a chat widget) that stops attempting reconnects after N consecutive failures, with a cooldown before retrying — same idea as the server-side circuit breaker pattern, scaled down.
-- React Query / SWR (or equivalent) as the retry/cache layer in a React/Next app rather than hand-rolling the wrapper above per project — see [react-next/state-management.md](../react-next/state-management.md) and [react-next/api-integration.md](../react-next/api-integration.md).
+- React Query / SWR (or equivalent) as the retry/cache layer in a React app rather than hand-rolling the wrapper above per project — see [react/state-management.md](react/state-management.md) and [next/api-integration.md](next/api-integration.md).
 
 ---
 

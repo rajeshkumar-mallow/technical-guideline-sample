@@ -1,6 +1,6 @@
 # JavaScript
 
-**Read this first.** These are the baseline language and module conventions for any JavaScript running in the browser or a frontend build pipeline, independent of framework. They exist so code reads the same way across projects and across the TypeScript/plain-JS boundary. See [TypeScript Conventions](../shared/typescript-conventions.md) for typing rules — TypeScript is the default; this file covers what applies regardless.
+**Read this first.** These are the baseline language and module conventions for any JavaScript running in the browser or a frontend build pipeline, independent of framework. They exist so code reads the same way across projects and across the TypeScript/plain-JS boundary. See [TypeScript Conventions](typescript-conventions.md) for typing rules — TypeScript is the default; this file covers what applies regardless.
 
 **Applies to:** All frontend JavaScript/TypeScript source, including build scripts and config files.
 
@@ -44,7 +44,7 @@ class ApiError extends Error {
 ```
 
 ### Equality & type coercion
-- **`===`/`!==` always.** `==` is banned by lint (see [Code Style & Linting](../shared/code-style-linting.md)) except the single idiomatic `value == null` check for "null or undefined."
+- **`===`/`!==` always.** `==` is banned by lint (see [Code Style & Linting](code-style-linting.md)) except the single idiomatic `value == null` check for "null or undefined."
 - No implicit coercion in conditionals on values that could be `0`, `''`, or `NaN` — check the actual condition (`items.length === 0`, not `!items.length` when zero is a meaningful value worth naming).
 
 ### Immutability by default

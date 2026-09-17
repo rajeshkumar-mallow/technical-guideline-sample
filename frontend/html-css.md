@@ -56,7 +56,7 @@ Either way: styling variables/tokens (colors, spacing, radii) come from [`stylin
 ## Recommended (opt-in)
 
 - **CSS Modules or scoped styles** (`Component.module.css`, styled-components, vanilla-extract) when not using a utility framework, to get automatic scoping without BEM's manual discipline.
-- **Stylelint** with a shared config to enforce the chosen methodology automatically rather than relying on review — pairs with [`../shared/code-style-linting.md`](../shared/code-style-linting.md).
+- **Stylelint** with a shared config to enforce the chosen methodology automatically rather than relying on review — pairs with [`../shared/code-style-linting.md`](../js/code-style-linting.md).
 
 ## Anti-Patterns (do not ship)
 

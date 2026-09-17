@@ -1,8 +1,8 @@
 # State Management
 
-**Read this first.** Reaching for the wrong state tool — global state for something local, client state for something the server already owns — is the most common source of React app complexity. This file gives a decision tree, not a single mandated library.
+**Read this first.** Reaching for the wrong state tool — global state for something local, client state for something the server already owns — is the most common source of React app complexity. This file gives a decision tree, not a single mandated library. It's framework-agnostic; Next.js-specific server-fetching mechanics (Server Component `fetch`, App Router caching) are in [`../next/routing-data-fetching.md`](../next/routing-data-fetching.md).
 
-**Applies to:** Next.js App Router projects, Client Components specifically (Server Components have no client state).
+**Applies to:** any React codebase.
 
 ---
 
@@ -12,12 +12,12 @@
 
 Ask in this order:
 
-1. **Does the data live on the server (DB, API)?** → It's **server state**. Do not copy it into `useState`/Context. Use Next's fetch caching (Server Components fetching directly) or a server-state library for client-side refetching/mutation (React Query / SWR). See [`routing-data-fetching.md`](routing-data-fetching.md).
+1. **Does the data live on the server (DB, API)?** → It's **server state**. Do not copy it into `useState`/Context. Use a server-state library for fetching/caching/mutation (**React Query** or **SWR**) — or, in a meta-framework with server-side data access (e.g. Next.js Server Components), fetch there directly.
 2. **Is the state used by exactly one component (and maybe its direct children via props)?** → **Local state** (`useState`/`useReducer`). Default choice — don't globalize state prematurely.
 3. **Is the state read/written by components in genuinely different parts of the tree, with no sensible prop-drilling path?** → **Global client state.** Reach for Context only for low-frequency-update values (theme, locale, auth session); reach for a state library (Zustand, Jotai) when updates are frequent or the state graph is nontrivial — Context re-renders every consumer on every change, which becomes a real perf problem for high-frequency state.
 
 ```
-server data?  ──yes──▶ server state (fetch caching / React Query / SWR)
+server data?  ──yes──▶ server state (React Query / SWR, or framework server-fetch)
      │ no
      ▼
 single component/subtree? ──yes──▶ useState / useReducer
@@ -34,7 +34,7 @@ frequent updates / complex graph ──▶ Zustand or Jotai (pick one, record vi
 - Never store server data (fetched lists, user records) in local state as a cache substitute — it goes stale silently with no revalidation.
 
 ### Global client state
-- **Recommended default: Zustand** for cross-tree client state (auth UI state, cart, multi-step wizard state that outlives a single route) — minimal boilerplate, no provider-wrapping requirement, selective subscriptions avoid Context's re-render-everything problem. Record the chosen library via ADR if a project picks Jotai or another alternative instead — don't mix multiple global-state libraries in one codebase without a documented reason.
+- **Recommended default: Zustand** for cross-tree client state (auth UI state, cart, multi-step wizard state that outlives a single view) — minimal boilerplate, no provider-wrapping requirement, selective subscriptions avoid Context's re-render-everything problem. Record the chosen library via ADR if a project picks Jotai or another alternative instead — don't mix multiple global-state libraries in one codebase without a documented reason.
 - **Context** stays appropriate for: theme, locale, auth session object (read-heavy, rarely-written), feature-flag values — values that change rarely and are read broadly.
 
 ```tsx
@@ -53,15 +53,15 @@ export const useCartStore = create<CartState>((set) => ({
 ```
 
 ### Server state
-- Data owned by the backend is fetched, cached, and revalidated by the framework/library — never manually synced into a global client store "for convenience." Duplicating server data into client state creates a second source of truth that drifts.
-- Server Components fetch directly with Next's extended `fetch` (see [`routing-data-fetching.md`](routing-data-fetching.md)); Client Components needing client-side refetch/mutation/optimistic updates use **React Query** or **SWR** (pick one project-wide) rather than hand-rolled `useEffect` + `useState` fetching.
+- Data owned by the backend is fetched, cached, and revalidated by a library or framework mechanism — never manually synced into a global client store "for convenience." Duplicating server data into client state creates a second source of truth that drifts.
+- Use **React Query** or **SWR** (pick one project-wide) for client-side fetch/refetch/mutation/optimistic updates rather than hand-rolled `useEffect` + `useState` fetching.
 
 ---
 
 ## Recommended (opt-in)
 
-- **URL state** (`useSearchParams`) for anything that should be shareable/bookmarkable or survive a refresh — filters, pagination, active tab. Prefer it over component state for these cases.
-- **`useOptimistic`** (React 19) for optimistic UI on Server Action mutations, scoped to low-risk actions (see [`forms-validation.md`](forms-validation.md) for the mutation boundary).
+- **URL state** (via your router's search-params API) for anything that should be shareable/bookmarkable or survive a refresh — filters, pagination, active tab. Prefer it over component state for these cases.
+- **`useOptimistic`** (React 19) for optimistic UI on low-risk mutations (a like button, a toggle) — not for anything that can fail validation server-side. See [Forms & Validation](forms-validation.md) for the mutation boundary.
 
 ---
 
@@ -78,7 +78,7 @@ export const useCartStore = create<CartState>((set) => ({
 ## Quick Reference
 
 ```
-✓ Server data → fetch caching / React Query / SWR, never copied into useState
+✓ Server data → React Query/SWR (or framework server-fetch), never copied into useState
 ✓ Local-first default: useState/useReducer
 ✓ Context for low-frequency broad reads; Zustand/Jotai for frequent/complex client state
 ✓ URL state for shareable/bookmarkable UI state

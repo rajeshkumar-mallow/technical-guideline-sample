@@ -37,7 +37,7 @@
 ### PR requirements
 - **Every PR** links a ticket, states what changed and why, and includes a testing note (what you ran, what you couldn't test).
 - **Minimum 1 approval** before merge; 2 for changes touching auth, payments, or shared/`shared/`-level conventions.
-- **CI must be green**: lint ([Code Style & Linting](code-style-linting.md)), type-check ([TypeScript Conventions](typescript-conventions.md)), tests ([Testing Philosophy](testing-philosophy.md)), build.
+- **CI must be green**: lint ([Code Style & Linting](../js/code-style-linting.md)), type-check ([TypeScript Conventions](../js/typescript-conventions.md)), tests ([Testing Philosophy](testing-philosophy.md)), build.
 - PRs stay small: target < 400 changed lines (excluding generated/lockfiles). Split larger work into a stacked series.
 - **No self-merge** except for docs-only or config-only changes explicitly marked low-risk.
 

@@ -10,7 +10,7 @@
 
 ### Global handlers
 - Register a global handler for **uncaught exceptions** (`window.onerror` / `error` event) and **unhandled promise rejections** (`unhandledrejection`) at app boot, before any feature code runs.
-- These are a safety net, not the primary mechanism — most errors should be caught closer to the source (try/catch around risky operations, framework error boundaries — see [`../react-next/error-boundaries.md`](../react-next/error-boundaries.md) for React specifics) so you get better context than a bare global handler provides.
+- These are a safety net, not the primary mechanism — most errors should be caught closer to the source (try/catch around risky operations, framework error boundaries — see [`react/error-boundaries.md`](react/error-boundaries.md) for React specifics) so you get better context than a bare global handler provides.
 
 ```ts
 window.addEventListener("error", (event) => {

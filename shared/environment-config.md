@@ -2,7 +2,7 @@
 
 **Read this first.** Configuration bugs that only show up in staging or production are almost always an environment-parity failure. This file defines how config is structured, named, and kept in parity across environments.
 
-**Applies to:** every project; Next.js-specific env variable exposure risk (`NEXT_PUBLIC_*`) is covered in [react-next/security.md](../react-next/security.md).
+**Applies to:** every project; Next.js-specific env variable exposure risk (`NEXT_PUBLIC_*`) is covered in [next/security.md](../frontend/next/security.md).
 
 ---
 

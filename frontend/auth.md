@@ -2,7 +2,7 @@
 
 **Read this first.** The frontend never owns authentication logic — it owns how credentials are stored, attached to requests, and cleared. Get token storage wrong and every other security control (CSP, sanitization) becomes a mitigation for a hole you didn't need to open.
 
-**Applies to:** any frontend consuming a session or token-based backend. React/Next-specific middleware and session patterns live in [`../react-next/auth.md`](../react-next/auth.md).
+**Applies to:** any frontend consuming a session or token-based backend. Next.js-specific middleware and session patterns live in [`next/auth.md`](next/auth.md).
 
 ---
 

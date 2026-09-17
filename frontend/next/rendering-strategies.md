@@ -45,7 +45,7 @@ Push `"use client"` **as far down the tree as possible** — mark the interactiv
 
 ### Stable vs. Experimental
 
-Adopting anything in the right-hand column in production requires an **ADR** (rule, reason, scope, revisit trigger) and is re-reviewed at every Next.js/React minor upgrade — see [Versioning & Release Process](../shared/versioning-release-process.md).
+Adopting anything in the right-hand column in production requires an **ADR** (rule, reason, scope, revisit trigger) and is re-reviewed at every Next.js/React minor upgrade — see [Versioning & Release Process](../../shared/versioning-release-process.md).
 
 | Stable (mandatory baseline) | Experimental (ADR required before production use) |
 |---|---|
@@ -87,7 +87,7 @@ If an experimental feature is adopted under an ADR, document the specific versio
 ✗ No experimental rendering feature in production without an ADR
 ```
 
-See also: [Routing & Data Fetching](routing-data-fetching.md), [Performance](performance.md), [Versioning & Release Process](../shared/versioning-release-process.md).
+See also: [Routing & Data Fetching](routing-data-fetching.md), [Performance](performance.md), [Versioning & Release Process](../../shared/versioning-release-process.md).
 
 ---
 *Section version: 0.1 — initial draft*

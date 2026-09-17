@@ -1,6 +1,6 @@
 # SEO & Metadata (React/Next)
 
-**Read this first.** Next's Metadata API replaces hand-written `<head>` tags with type-checked, composable exports. This file governs how metadata, sitemaps, and OG images are generated in the App Router — general meta-tag/structured-data principles live in [frontend/seo-metadata.md](../frontend/seo-metadata.md).
+**Read this first.** Next's Metadata API replaces hand-written `<head>` tags with type-checked, composable exports. This file governs how metadata, sitemaps, and OG images are generated in the App Router — general meta-tag/structured-data principles live in [frontend/seo-metadata.md](../seo-metadata.md).
 
 **Applies to:** Every public-facing route in a React/Next 15 App Router project.
 
@@ -108,7 +108,7 @@ Next auto-wires the resulting image into the page's `openGraph.images` — no ma
 ## Recommended (opt-in)
 
 - **`alternates.canonical`** set explicitly on pages reachable via multiple URLs (query params, trailing slash variants) to avoid duplicate-content penalties.
-- **JSON-LD structured data** via a small script component for content types search engines reward (articles, products, FAQs) — see [frontend/seo-metadata.md](../frontend/seo-metadata.md) for the general pattern.
+- **JSON-LD structured data** via a small script component for content types search engines reward (articles, products, FAQs) — see [frontend/seo-metadata.md](../seo-metadata.md) for the general pattern.
 - **`generateStaticParams`** paired with `generateMetadata` for known, finite dynamic routes (e.g. all product IDs) so metadata is pre-rendered at build time instead of per-request.
 
 ---

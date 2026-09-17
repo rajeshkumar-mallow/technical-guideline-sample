@@ -1,6 +1,6 @@
 # SEO & Metadata (Frontend)
 
-**Read this first.** Search and social-share surfaces are the first impression for most users who never opened the app directly — broken metadata is invisible to the team and costly to the business. This file sets the framework-agnostic baseline. Next.js-specific implementation (Metadata API, dynamic OG image generation, sitemap/robots generation) is in [`react-next/seo-metadata.md`](../react-next/seo-metadata.md).
+**Read this first.** Search and social-share surfaces are the first impression for most users who never opened the app directly — broken metadata is invisible to the team and costly to the business. This file sets the framework-agnostic baseline. Next.js-specific implementation (Metadata API, dynamic OG image generation, sitemap/robots generation) is in [`next/seo-metadata.md`](next/seo-metadata.md).
 
 **Applies to:** any page intended to be indexed or shared.
 

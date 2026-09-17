@@ -60,7 +60,7 @@ export async function POST(request: Request) {
 Never let an unhandled exception in a Route Handler reach the client as a raw stack trace — catch, classify, and return the structured shape.
 
 ### Server Actions apply resilience patterns too
-Any Server Action or Route Handler that calls an external provider (payments, email, storage) follows the same resilience rules as client-side fetches in [frontend/api-resilience.md](../frontend/api-resilience.md): explicit timeouts, retry only on transient failures, idempotency keys on mutations that must not duplicate.
+Any Server Action or Route Handler that calls an external provider (payments, email, storage) follows the same resilience rules as client-side fetches in [frontend/api-resilience.md](../api-resilience.md): explicit timeouts, retry only on transient failures, idempotency keys on mutations that must not duplicate.
 
 ```ts
 "use server";
@@ -80,7 +80,7 @@ export async function chargeCard(input: ChargeInput) {
 ```
 
 ### Auth check on every entry point
-Route Handlers and Server Actions are **not automatically protected by page-level auth** — a page's middleware guard doesn't cover a Server Action invoked from elsewhere. Re-check the session/permissions inside the action or handler itself (see [react-next/auth.md](auth.md)).
+Route Handlers and Server Actions are **not automatically protected by page-level auth** — a page's middleware guard doesn't cover a Server Action invoked from elsewhere. Re-check the session/permissions inside the action or handler itself (see [Authentication](auth.md)).
 
 ---
 

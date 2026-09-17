@@ -2,7 +2,7 @@
 
 **Read this first.** Client-side code runs in an environment you don't control — the browser, the user's extensions, and anything injected between them. These rules exist to keep a compromised dependency, a reflected input, or a misconfigured header from turning into a working exploit.
 
-**Applies to:** any frontend codebase (framework-agnostic). React/Next-specific additions live in [`../react-next/security.md`](../react-next/security.md).
+**Applies to:** any frontend codebase (framework-agnostic). Next.js-specific additions live in [`next/security.md`](next/security.md).
 
 ---
 

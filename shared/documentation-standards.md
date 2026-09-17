@@ -43,6 +43,11 @@ Every component published from a shared component library documents, at minimum:
 - **Usage examples** covering the common variants and at least one edge case (e.g. long text, empty state, disabled).
 - **Accessibility notes** — keyboard interaction, ARIA roles assumed, anything a consumer must do themselves (e.g. provide a label).
 
+### Sample data & examples
+- Code examples, fixtures, Storybook stories, and seed data use **obviously-fake data** — never a real user's name, email, phone number, or ID pulled from a real account for convenience. See [react/components-architecture.md](../frontend/react/components-architecture.md#privacy--data-boundaries-in-components) for the component-level version of this rule.
+- Don't paste real production API responses (even "just for the shape") into docs or examples without scrubbing PII first — a scrubbed/synthetic fixture is the deliverable, not a raw payload.
+- Example code doesn't wire in real analytics/tracking IDs or third-party keys — use placeholders (`YOUR_API_KEY`) so a copy-paste doesn't silently send data to production services.
+
 ### ADRs (Architecture Decision Records)
 - Any hard-to-reverse decision (library choice, architectural pattern, deviation from a mandatory rule) gets an ADR in `docs/adr/`.
 - ADR format: context, decision, consequences, and — for exceptions to a mandatory rule — a **revisit trigger** (date or milestone).
@@ -60,6 +65,7 @@ Every component published from a shared component library documents, at minimum:
 - A README describing a setup process that no longer matches `package.json`/config — verify before merging a config change.
 - Copy-pasting this guideline's content into a project repo instead of linking to it (creates drift — see root [README governance](../README.md#governance-versioning--exceptions)).
 - Documenting a component's props by hand when the tooling can generate the table from types — hand-maintained tables go stale.
+- Real user data, unscrubbed production payloads, or live API keys pasted into docs, examples, or fixtures.
 
 ## Quick Reference
 
@@ -69,6 +75,7 @@ Every component published from a shared component library documents, at minimum:
 ✓ Docs updated in the same PR as the change that made them stale
 ✓ Shared components: purpose, generated props table, examples, a11y notes
 ✓ Hard-to-reverse decisions get an ADR with a revisit trigger for exceptions
+✓ Examples/fixtures use fake data only; no real PII, no live keys
 ✗ No comments restating obvious code · no hand-duplicated prop tables · no stale setup docs
 ```
 

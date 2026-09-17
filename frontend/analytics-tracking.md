@@ -1,6 +1,6 @@
 # Analytics & Tracking (Frontend)
 
-**Read this first.** Analytics scripts are one of the most common sources of blocked main-thread time, privacy violations, and silently inconsistent data. This file sets loading, naming, and consent rules that apply to any analytics/tracking integration. React/Next-specific script-loading and route-change tracking patterns are in [`react-next/analytics-tracking.md`](../react-next/analytics-tracking.md).
+**Read this first.** Analytics scripts are one of the most common sources of blocked main-thread time, privacy violations, and silently inconsistent data. This file sets loading, naming, and consent rules that apply to any analytics/tracking integration. Next.js-specific script-loading and route-change tracking patterns are in [`next/analytics-tracking.md`](next/analytics-tracking.md).
 
 **Applies to:** any third-party analytics, product-analytics, or tag-manager script.
 
