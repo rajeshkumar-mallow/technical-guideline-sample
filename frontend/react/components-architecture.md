@@ -14,14 +14,14 @@
 - One component per file; filename matches the component name (`invoice-table.tsx` exports `InvoiceTable`).
 
 ### Props & typing
-- Every component's props are an explicit `interface` or `type`, never `any`, never untyped destructuring from an inferred object (see [`typescript-conventions.md`](../../js/typescript-conventions.md) for the broader TS baseline).
+- Every component's props are an explicit `type` (see [`typescript-conventions.md`](../../js/typescript-conventions.md) for why `type` is the default and `interface` is reserved for declaration merging), never `any`, never untyped destructuring from an inferred object.
 - Prefer **composition (`children`, render props, slots)** over boolean prop explosion (`variant`, `size` are fine; `showHeader`, `hideFooter`, `isCompactWithBorder` is a sign to split the component).
 
 ```tsx
-interface InvoiceTableProps {
+type InvoiceTableProps = {
   invoices: Invoice[];
   onRowClick?: (id: string) => void;
-}
+};
 
 export function InvoiceTable({ invoices, onRowClick }: InvoiceTableProps) {
   // ...

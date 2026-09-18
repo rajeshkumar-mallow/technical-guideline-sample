@@ -41,10 +41,10 @@ frequent updates / complex graph ──▶ Zustand or Jotai (pick one, record vi
 // store/cart-store.ts
 import { create } from "zustand";
 
-interface CartState {
+type CartState = {
   items: CartItem[];
   addItem: (item: CartItem) => void;
-}
+};
 
 export const useCartStore = create<CartState>((set) => ({
   items: [],
